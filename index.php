@@ -1,4 +1,5 @@
 <?php include_once("showlinks.php"); ?>
+<?php include_once("showvlinks.php"); ?>
 <?php include_once("showannouncelist.php"); ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -42,14 +43,15 @@ window.onload=setJump;
                   <param name="wmode" value="transparent" />
                   <embed src="101.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" wmode="transparent" height="220" width="300"></embed>
         </object>
-        </div>
-    <h1>&nbsp;</h1>
-    <div id="top"><?php echo showLinklist(10,"l") ?>
+    </div>
+    <div id="top">
+		<div id="video"><?php echo showVLink() ?></div>
+		<?php echo showLinklist(10,"l") ?>
     </div>
 	<div id="middle">
 		<div id="left"><?php echo showLinklist(12,"l") ?>
 		</div>
-		<div id="news"><h2>中心动态</h2><?php echo showAnnounceList() ?>
+		<div id="news"><h2><span>中心动态</span><span id="more"><a href="more.php">更多</a></span></h2><?php showAnnounceList(0,6) ?>
 		</div>
 		<div id="right"><?php echo showLinklist(13,"l") ?>
 		</div>

@@ -36,7 +36,7 @@ function showLinklist($categoryID,$type)
 		{
 			$address=$row['linkAddress'];
 			if (strstr($address,"http://")=="" && substr_count($address,"./")==0) $address="http://".$address;
-			$html.="<li><a href='".$address."' target='_blank'>";
+			$html.="<li><a href='".$address."' target='_blank' title='".$row['comment']."'>";
 			if ($categoryID==13)
 			{
 				$img=$row['logo'];

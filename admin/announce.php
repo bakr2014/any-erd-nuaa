@@ -52,7 +52,6 @@ oFCKeditor.Config["AutoDetectLanguage"] = false ;
 oFCKeditor.Config["DefaultLanguage"]    = "zh-cn" ;
 oFCKeditor.Height=400;
 oFCKeditor.Config["SkinPath"]=sBasePath+"editor/skins/office2003/";
-oFCKeditor.ToolbarSet="anyToolbarSet";
 
 oFCKeditor.Value = '' ;
 oFCKeditor.Create() ;

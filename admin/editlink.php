@@ -5,7 +5,7 @@ $html="";
 if (isset($_GET["action"]) && $_GET["action"]=="edit")
 {
 	$title=$_POST["title"];
-	$content=$_POST["content"];
+	$comment=$_POST["comment"];
 	$address=$_POST["address"];
 	$category=$_POST["category"];
 	$authorID=$_SESSION['userID'];
@@ -13,7 +13,7 @@ if (isset($_GET["action"]) && $_GET["action"]=="edit")
 	
 	include_once("class.db.php");
 	$conn=new DBOperation();
-	$sql="UPDATE links SET linkName='$title',linkAddress='$address',categoryID=$category,comment='$content',logo='$logo' WHERE ID=".$_GET['id'];
+	$sql="UPDATE links SET linkName='$title',linkAddress='$address',categoryID=$category,comment='$comment',logo='$logo' WHERE ID=".$_GET['id'];
 	$conn->query($sql);
 	$html="修改成功 <a href='links.php'>返回</a>";
 }
@@ -48,15 +48,14 @@ if (isset($_GET["action"]) && $_GET["action"]=="edit")
 	{
 		$title=$row['linkName'];
 		$address=$row['linkAddress'];
-		$content=$row['comment'];
-		if ($content==0) $content="";
+		$comment=$row['comment'];
 		$logo=$row['logo'];
 	}
 	else
 	{
 		$title="";
 		$address="";
-		$content="";
+		$comment="";
 	}
 ?>
 <form id="form1" name="form1" method="post" action="editlink.php?action=edit&id=<?php echo $_GET['id'] ?>">
@@ -106,9 +105,9 @@ oFCKeditor.Create() ;
 //-->
 </script>
 <br />
-描述：
+描述：<br />
 <label>
-<textarea name="content" id="content" cols="45" rows="5"><?php echo $content ?></textarea>
+<textarea name="comment" id="comment" cols="45" rows="5"><?php echo $comment ?></textarea>
 </label>
 <br />
 <label>
