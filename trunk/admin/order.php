@@ -6,7 +6,7 @@ include_once("class.db.php");
 $conn=new DBOperation();
 if (isset($_GET['action']))
 {
-	if (isset($_GET['id'])) $sql="SELECT * FROM links WHERE categoryID=".$_GET['id'];
+	if (isset($_GET['id'])) $sql="SELECT * FROM links WHERE categoryID=".$_GET['id']." order by `order` ASC,`addTime` DESC";
 	else $sql="SELECT * FROM links";
 	$result=$conn->query($sql);
 	while($row=$result->fetch_array())
@@ -38,7 +38,7 @@ if (isset($_GET['action']))
 <form method="post" action="order.php?id=<?php echo $_GET['id'] ?>&action=edit">
 <ul>
 <?php
-if (isset($_GET['id'])) $sql="SELECT * FROM links WHERE categoryID=".$_GET['id']." order by `order`";
+if (isset($_GET['id'])) $sql="SELECT * FROM links WHERE categoryID=".$_GET['id']." order by `order` ASC,`addTime` DESC";
 else $sql="SELECT * FROM links";
 $result=$conn->query($sql);
 while($row=$result->fetch_array())

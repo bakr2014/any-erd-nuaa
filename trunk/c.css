@@ -22,26 +22,24 @@ a,a:link,a:visited,a:hover {
 	width:1000px;
 	margin:0 auto;
 	background:url(images/bg2.jpg) no-repeat;
+	height:600px;
 }
 
-h1 {
-	font-size:24px;
-	font-family:黑体,微软亚黑;
-	color:#060;
-	margin-left:350px;
-	margin-top:140px;
-	margin-bottom:100px;
+#top {
+	height:250px;
 }
 
 #left {
 	float:left;
 	width:260px;
-	margin-left:30px
+	padding-left:40px;
+	margin-top:20px;
 }
 
 ul {
 	margin:0;
 	padding:0;
+	list-style:none;
 }
 
 #right {
