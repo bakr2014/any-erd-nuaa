@@ -1,0 +1,35 @@
+@charset "utf-8";
+/* CSS Document */
+
+body
+{
+	font-size:15px;
+}
+
+a:link,a:visited
+{
+	text-decoration:none;
+	color:#0066FF;
+}
+
+a:hover
+{
+	text-decoration:underline;
+}
+
+#menu,#content
+{
+	margin:0 auto;
+	width:800px;
+}
+
+#menu
+{
+	margin-bottom:40px;
+}
+
+li
+{
+	height:20px;
+	list-style:none;
+}
