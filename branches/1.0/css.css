@@ -140,12 +140,14 @@ li {
 		text-align:center;
 	}
 	
-		#right p,#right img {
+		#right p,#right IMG {
 			margin:0;
 			padding:0;
 			border:none;
 		}
-		
+		#right LI {
+			height:40px;
+		}
 		
 
 #bottom {
