@@ -31,7 +31,7 @@ while($row=$result->fetch_array())
 	$id=$row['ID'];
 	$pid=$row['categoryID'];
 	$address=$row['linkAddress'];
-	if (strstr($address,"http://")=="") $address="http://".$address;
+	if (strstr($address,"://")=="") $address="http://".$address;
 	echo "<li>";
 	echo "<a href='".$address."'>".$row['linkName']."</a> ";
 	echo "<a href=editlink.php?id=$id&pid=$pid>修改</a> | ";
