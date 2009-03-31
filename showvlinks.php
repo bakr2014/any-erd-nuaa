@@ -11,7 +11,7 @@ function showVLink()
 	if ($row=$result->fetch_array())
 	{
 		$address=$row['linkAddress'];
-		if (strstr($address,"http://")=="" && substr_count($address,"./")==0) $address="http://".$address;
+		if (strstr($address,"//")=="" && substr_count($address,"./")==0) $address="http://".$address;
 		$html.="<a href='".$address."' target='_blank' title='".$row['comment']."' title='".$row['comment']."'>\n";
 		$html.="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	";
 		$html.="</a>\n";
